@@ -15,7 +15,7 @@ public class Main {
         lv3PizzaList.add(new MenuItem("치즈 킹\t\t", 21900, "모짜렐라 치즈가 2배 이상 들어간 치즈 끝판왕"));
 
         List<MenuItem> lv3SideList = new ArrayList<>();
-        lv3SideList.add(new MenuItem("바삭 감자\t", 1800, "크런치한 바삭함이 일품인 감자튀김"));
+        lv3SideList.add(new MenuItem("바삭 감자!\t", 1800, "크런치한 바삭함이 일품인 감자튀김"));
         lv3SideList.add(new MenuItem("어니언 링\t", 1800, "양파의 달콤함을 그대로 담아 튀겨낸 바삭한 어니언링"));
         lv3SideList.add(new MenuItem("베스트 샘플러\t", 7500, "윙3, 봉3, 어니언링4, 바삭한 감자와 그린살사&갈릭파마산 소스"));
         lv3SideList.add(new MenuItem("반반 샐러드\t", 3500, "고구마 샐러드, 토마토 후실리. 반반 제공되는 샐러드"));
