@@ -1,18 +1,19 @@
 package study.lv3;
 
 public class MenuItem {
-
     // 속성
     private String lv3item;
     private int lv3price;
     private String lv3description;
 
+    // 생성자
     public MenuItem(String lv3item, int lv3price, String lv3description){
         this.lv3item = lv3item;
         this.lv3price = lv3price;
         this.lv3description = lv3description;
     }
 
+    // 게터
     public String getLv3Item() {
         return lv3item;
     }
@@ -24,6 +25,4 @@ public class MenuItem {
     public String getLv3Description() {
         return lv3description;
     }
-
-
 }

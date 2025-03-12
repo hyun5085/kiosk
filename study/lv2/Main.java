@@ -5,10 +5,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner lv2scanner = new Scanner(System.in);
+        // List를 선언하여 여러 MenuItem을 추가합니다
         List<MenuItem> lv2pizzaList = new ArrayList<>();
         List<MenuItem> lv2sideList = new ArrayList<>();
 
+        // main 함수에서 MenuItem 클래스를 활용하여 햄버거 메뉴를 출력
+        // MenuItem 객체 생성을 통해 이름, 가격, 설명을 세팅
+        // 키워드: new
         lv2pizzaList.add(new MenuItem("씨푸드킹\t\t", 23500, "통새우와 통관자. 최강 씨푸드의 만남"));
         lv2pizzaList.add(new MenuItem("립스테이크 \t", 23500, "180g 갈비맛 스테이크가 통으로"));
         lv2pizzaList.add(new MenuItem("수퍼 슈프림 \t", 21500, "토마토소스, 야채, 고기, 모짜렐라의 환상 콤비!"));
@@ -45,7 +49,7 @@ public class Main {
             System.out.print("👉 선택하실 메뉴의 번호를 입력해주세요: ");
 
             // 입력값 받기
-            int lv2selectNumber = scanner.nextInt();
+            int lv2selectNumber = lv2scanner.nextInt();
 
 
             switch (lv2selectNumber) {
@@ -58,7 +62,7 @@ public class Main {
                     }
                     while (true) {
                         System.out.println("주문하실 피자의 번호를 입력해주세요:");
-                        int lv2selectPizza = scanner.nextInt();
+                        int lv2selectPizza = lv2scanner.nextInt();
 
                         if (lv2selectPizza >= 0 && lv2selectPizza <= lv2pizzaList.size()) {
                             System.out.println("주문하신 메뉴는 " + lv2pizzaList.get(lv2selectPizza - 1).getLv2Item() + " 피자 입니다.");
@@ -75,7 +79,7 @@ public class Main {
                     }
                     while (true) {
                         System.out.println("주문하실 사이드의 번호를 입력해주세요:");
-                        int lv2selectside = scanner.nextInt();
+                        int lv2selectside = lv2scanner.nextInt();
 
                         if (lv2selectside >= 0 && lv2selectside <= lv2sideList.size()) {
                             System.out.println("주문하신 메뉴는 " + lv2sideList.get(lv2selectside - 1).getLv2Item() + "입니다.");
