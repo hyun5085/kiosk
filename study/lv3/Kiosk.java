@@ -44,10 +44,10 @@ public class Kiosk {
                     System.out.println("🛑 프로그램을 종료합니다.");
                     return;
                 case 1:
-                    showMenu(lv3PizzaList, "🍕 피자 메뉴");
+                    lv3ShowMenu(lv3PizzaList, "🍕 피자 메뉴");
                     break;
                 case 2:
-                    showMenu(lv3SideList, "🍟 사이드 메뉴");
+                    lv3ShowMenu(lv3SideList, "🍟 사이드 메뉴");
                     break;
                 default:
                     System.out.println("⚠️ 올바른 번호를 입력해주세요.");
@@ -56,7 +56,7 @@ public class Kiosk {
         }
     }
 
-    public void showMenu(List<MenuItem> menuList, String lv3Title) {
+    public void lv3ShowMenu(List<MenuItem> menuList, String lv3Title) {
         System.out.println("[ "+ lv3Title+ " ]");
         System.out.println("0. 뒤로 가기");
         for (int i = 0; i < menuList.size(); i++) {
@@ -67,7 +67,7 @@ public class Kiosk {
             System.out.println("주문하실 메뉴의 번호를 입력해주세요:");
             int lv3selectItem = lv3scanner.nextInt();
 
-            if (lv3selectItem > 0 && lv3selectItem <= menuList.size()) { // ✅ 0이 아니라 1부터 시작
+            if (lv3selectItem > 0 && lv3selectItem <= menuList.size()) { // 0이 아니라 1부터 시작
                 System.out.println("주문하신 메뉴는 " + menuList.get(lv3selectItem - 1).getLv3Item() + " 입니다.");
                 break;
             } else if (lv3selectItem == 0){

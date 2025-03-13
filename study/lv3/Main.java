@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+
         List<MenuItem> lv3PizzaList = new ArrayList<>();
         lv3PizzaList.add(new MenuItem("씨푸드킹\t\t", 23500, "통새우와 통관자. 최강 씨푸드의 만남"));
         lv3PizzaList.add(new MenuItem("립스테이크 \t", 23500, "180g 갈비맛 스테이크가 통으로"));
