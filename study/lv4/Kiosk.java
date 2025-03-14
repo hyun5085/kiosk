@@ -30,26 +30,48 @@ public class Kiosk {
                 System.out.println((i + 1) + ". " + lv4Menu.get(i).getLv4Category());
             }
 
-            System.out.println("0. 프로그램을 종료 합니다.");
-
-            // 🛒 메뉴 선택 안내
-            System.out.print("👉 선택하실 메뉴의 번호를 입력해주세요: ");
-            int lv4selectNumber = lv4scanner.nextInt();
-
-            switch (lv4selectNumber) {
-                case 0:
-                    System.out.println("🛑 프로그램을 종료합니다.");
-                    return;
-                case 1:
-                    showMenu(lv4Menu.get(lv4selectNumber-1));
+            System.out.println("0. 프로그램 종료");
+            int lv4selectNumber;
+                // 🛒 메뉴 선택 안내
+            while (true) {
+                try {
+                    System.out.print("👉 선택하실 메뉴의 번호를 입력해주세요: ");
+                    lv4selectNumber = lv4scanner.nextInt();
                     break;
-                case 2:
-                    showMenu(lv4Menu.get(lv4selectNumber-1));
-                    break;
-                default:
-                    System.out.println("⚠️ 올바른 번호를 입력해주세요.");
-                    continue;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("❌ 오류: 숫자를 입력해주세요!"); // 에러 메시지 출력
+                    lv4scanner.nextLine(); // 버퍼에 남아 있는 잘못된 입력 제거
+                }
             }
+
+            if (lv4selectNumber == 0) {
+                System.out.println("🖥️ 프로그램을 종료합니다.");
+                break;
+            } else if (lv4selectNumber > 0 && lv4selectNumber <= lv4Menu.size()) {
+                showMenu(lv4Menu.get(lv4selectNumber - 1));
+
+            } else {
+                System.out.println("⚠️올바른 번호를 입력해주세요 :");
+                continue;
+            }
+
+
+
+//            switch (lv4selectNumber) {
+//                case 0:
+//                    System.out.println("🖥️ 프로그램을 종료합니다.");
+//                    return;
+//                case 1:
+//                    showMenu(lv4Menu.get(lv4selectNumber - 1));
+//                    break;
+//                case 2:
+//                    showMenu(lv4Menu.get(lv4selectNumber - 1));
+//                    break;
+//                default:
+//                    System.out.println("⚠️ 올바른 번호를 입력해주세요.");
+//                    continue;
+//            }
         }
     }
 
@@ -68,10 +90,10 @@ public class Kiosk {
             int lv4selectItem = lv4scanner.nextInt();
 
             if (lv4selectItem > 0 && lv4selectItem <= lv4Item.size()) {
-                System.out.println("주문하신 메뉴는 " + lv4Item.get(lv4selectItem - 1).getLv4Item() + " 입니다.");
+                System.out.println("주문하신 메뉴는 " + lv4Item.get(lv4selectItem - 1).getLv4Item() + " 입니다.\n");
                 break;
             } else if (lv4selectItem == 0) {
-                return;
+                break;
             } else {
                 System.out.println("⚠️ 잘못된 번호입니다. 다시 입력해주세요.");
             }

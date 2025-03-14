@@ -33,9 +33,8 @@ public class Main {
 
         Kiosk kiosk = new Kiosk(lv4AllMenus);
 
+
         kiosk.start();
-
-
 
     }
 }
