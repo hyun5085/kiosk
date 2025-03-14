@@ -22,6 +22,8 @@ public class Main {
         lv4SideList.add(new MenuItem("반반 샐러드", 3500, "고구마 샐러드, 토마토 후실리. 반반 제공되는 샐러드"));
         lv4SideList.add(new MenuItem("그린 샐러드", 3500, "신선한 채소에 레몬 갈릭 드레싱으로 상큼한 샐러드!"));
 
+        // Menu 클래스 생성하기
+        // 피자 메뉴, 음료 메뉴 등 각 카테고리 내에 여러 MenuItem을 포함
         Menu lv4PizzaCategory = new Menu("피자",lv4PizzaList);
         Menu lv4SideCategory = new Menu("사이드",lv4SideList);
 
@@ -31,8 +33,8 @@ public class Main {
         lv4AllMenus.add(lv4PizzaCategory);
         lv4AllMenus.add(lv4SideCategory);
 
+        // 키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스
         Kiosk kiosk = new Kiosk(lv4AllMenus);
-
 
         kiosk.start();
 

@@ -87,7 +87,16 @@ public class Kiosk {
 
         while(true) {
             System.out.println("주문하실 메뉴의 번호를 입력해주세요.:");
-            int lv4selectItem = lv4scanner.nextInt();
+            int lv4selectItem;
+            while (true) {
+                try {
+                    lv4selectItem = lv4scanner.nextInt();
+                    break;
+                } catch (InputMismatchException e) {
+                    System.out.println("❌ 오류: 숫자를 입력해주세요!");
+                    lv4scanner.nextLine(); // 잘못된 입력 제거
+                }
+            }
 
             if (lv4selectItem > 0 && lv4selectItem <= lv4Item.size()) {
                 System.out.println("주문하신 메뉴는 " + lv4Item.get(lv4selectItem - 1).getLv4Item() + " 입니다.\n");

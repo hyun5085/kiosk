@@ -7,6 +7,8 @@ public class Kiosk {
     private List<MenuItem> lv3PizzaList = new ArrayList<>();
     private List<MenuItem> lv3SideList = new ArrayList<>();
 
+    // 키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스
+    // MenuItem을 관리하는 리스트가 필드로 존재
     public Kiosk(List<MenuItem> lv3PizzaList, List<MenuItem> lv3SideList){
         this.lv3PizzaList = lv3PizzaList;
         this.lv3SideList = lv3SideList;
@@ -36,8 +38,18 @@ public class Kiosk {
             System.out.println("└──────────┴─────────────┘");
 
             // 🛒 메뉴 선택 안내
-            System.out.print("👉 선택하실 메뉴의 번호를 입력해주세요: ");
-            int lv3selectNumber = lv3scanner.nextInt();
+            int lv3selectNumber;
+            while (true) {
+                try {
+                    // 🛒 메뉴 선택 안내
+                    System.out.print("👉 선택하실 메뉴의 번호를 입력해주세요: ");
+                    lv3selectNumber = lv3scanner.nextInt();
+                    break; // 정상 입력이면 루프 종료
+                } catch (InputMismatchException e) {
+                    System.out.println("❌ 오류: 숫자를 입력해주세요!"); // 에러 메시지 출력
+                    lv3scanner.nextLine(); // 잘못된 입력 제거
+                }
+            }
 
             switch (lv3selectNumber) {
                 case 0:
@@ -65,11 +77,22 @@ public class Kiosk {
         }
         while (true) {
             System.out.println("주문하실 메뉴의 번호를 입력해주세요:");
-            int lv3selectItem = lv3scanner.nextInt();
+            int lv3selectItem;
+            while (true) {
+                try {
+                    lv3selectItem = lv3scanner.nextInt();
+                    break;
+                } catch (InputMismatchException e) {
+                    System.out.println("❌ 오류: 숫자를 입력해주세요!");
+                    lv3scanner.nextLine(); // 잘못된 입력 제거
+                }
+            }
 
             if (lv3selectItem > 0 && lv3selectItem <= menuList.size()) { // 0이 아니라 1부터 시작
                 System.out.println("주문하신 메뉴는 " + menuList.get(lv3selectItem - 1).getLv3Item() + " 입니다.");
                 break;
+
+                // 0을 입력하면 프로그램이 ‘뒤로가기’되거나 ‘종료’됩니다.
             } else if (lv3selectItem == 0){
                 return;
             } else{
